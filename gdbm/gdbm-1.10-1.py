@@ -1,4 +1,4 @@
-class Gdm(Formula):
+class Gdbm(Formula):
 
     name = 'gdbm'
     version = '1.10'
