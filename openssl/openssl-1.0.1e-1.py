@@ -7,7 +7,7 @@ class OpenSSL(Formula):
     sources = File('http://openssl.org/source/openssl-1.0.1e.tar.gz',
                    sha256='f74f15e8c8ff11aa3d5bb5f276d202ec18d7246e95f961db76054199c69c1ae3')
     envvars = {
-        'RANDFILE': '%(env_dir)s/ssl/rnd',
+        #'RANDFILE': '%(env_dir)s/ssl/rnd',
         'OPENSSL_CONF': '%(env_dir)s/ssl/openssl.cnf',
     }
 
