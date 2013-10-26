@@ -21,10 +21,10 @@ class Python(Formula):
         self.run_configure()
         self.run_make()
         self.run_make(['install'])
-        self.install_package('setuptools', self.setuptools)
-        self.install_package('pip', self.pip)
+        self.install_python_package('setuptools', self.setuptools)
+        self.install_python_package('pip', self.pip)
 
-    def install_package(self, name, package):
+    def install_python_package(self, name, package):
         self.log.info('Adding python package: %s', name)
         package_dir = self.unarchive(package)
-        self.run_command('python', ('setup.py', 'install'), cwd=package_dir)
+        self.run_python(('setup.py', 'install'), cwd=package_dir)
