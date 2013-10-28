@@ -12,11 +12,13 @@ class OpenSSL(Formula):
     }
 
     def install(self):
-        args = ['./Configure', '--prefix=%s' % self.env.prefix, 'zlib-dynamic', 'shared']
-        if self.env.os_name == 'osx':
+        environment = self.environment
+        args = ['./Configure', '--prefix=%s' % environment.prefix,
+                'zlib-dynamic', 'shared']
+        if environment.os_name == 'osx':
             args.append('darwin64-x86_64-cc')
         self.run_command('perl', args)
         self.run_make()
         self.run_make(['install',
-                       'MANDIR=%(man)s' % self.env.directories,
+                       'MANDIR=%(man)s' % environment.directories,
                        'MANSUFFIX=ssl'])
