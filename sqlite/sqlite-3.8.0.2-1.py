@@ -7,6 +7,5 @@ class Sqlite(Formula):
     sources = File('http://sqlite.org/2013/sqlite-autoconf-3080002.tar.gz',
                    sha1='294c30e882a0d45877bce09afe72d08ccfc6b650')
     dependencies = ('readline',)
-    configure_args = ('--prefix=%(env_dir)s',
-                      '--disable-dependency-tracking',
+    configure_args = ('--prefix=%(prefix)s',
                       '--enable-dynamic-extensions')

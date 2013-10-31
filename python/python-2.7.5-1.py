@@ -7,10 +7,10 @@ class Python(Formula):
     sources = File('http://www.python.org/ftp/python/2.7.5/Python-2.7.5.tar.bz2',
                    sha1='6cfada1a739544a6fa7f2601b500fba02229656b')
     dependencies = ('pkg-config', 'readline', 'sqlite', 'gdbm', 'openssl')
-    configure_args = ('--prefix=%(env_dir)s',
+    configure_args = ('--prefix=%(prefix)s',
                       '--enable-ipv6',
-                      '--datarootdir=%(share_dir)s',
-                      '--datadir=%(share_dir)s')
+                      '--datarootdir=%(share)s',
+                      '--datadir=%(share)s')
 
     setuptools = File('https://pypi.python.org/packages/source/s/setuptools/setuptools-1.1.6.tar.gz',
                       sha1='4a8863e8196704759a5800afbcf33a94b802ac88')
@@ -26,5 +26,4 @@ class Python(Formula):
 
     def install_python_package(self, name, package):
         self.log.info('Adding python package: %s', name)
-        package_dir = self.unarchive(package)
-        self.run_python('setup.py install', cwd=package_dir)
+        self.run_python('setup.py install', cwd=self.unarchive(package))

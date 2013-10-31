@@ -16,6 +16,6 @@ class Readline(Formula):
         File('http://ftp.igh.cnrs.fr/pub/gnu/readline/readline-6.2-patches/readline62-004',
              md5='c08e787f50579ce301075c523fa660a4')
     )
-    configure_args = ('--prefix=%(env_dir)s',
-                      '--mandir=%(man_dir)s',
+    configure_args = ('--prefix=%(prefix)s',
+                      '--mandir=%(man)s',
                       '--enable-multibyte')
