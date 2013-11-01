@@ -9,9 +9,8 @@ class glib(Formula):
     dependencies = ('pkg-config', 'gettext', 'libffi', 'xz')
     configure_args = Formula.configure_args + [
         '--disable-maintainer-mode',
-        '--disable-dependency-tracking',
         '--disable-silent-rules',
         '--disable-dtrace',
-        '--disable-modular-tests',
         '--disable-libelf',
     ]
+    build_envvars = {'CFLAGS': '-L%(lib)s', 'CPPFLAGS': '-I%(include)s'}
