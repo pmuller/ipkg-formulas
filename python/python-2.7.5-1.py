@@ -1,8 +1,10 @@
-class Python(Formula):
+from ipkg.build import Formula, File
+
+
+class python(Formula):
 
     name = 'python'
     version = '2.7.5'
-    revision = 1
     homepage = 'http://www.python.org'
     sources = File('http://www.python.org/ftp/python/2.7.5/Python-2.7.5.tar.bz2',
                    sha1='6cfada1a739544a6fa7f2601b500fba02229656b')

@@ -1,8 +1,10 @@
-class Readline(Formula):
+from ipkg.build import Formula, File
+
+
+class readline(Formula):
 
     name = 'readline'
     version = '6.2'
-    revision = 1
     homepage = 'http://tiswww.case.edu/php/chet/readline/rltop.html'
     sources = File('http://ftpmirror.gnu.org/readline/readline-6.2.tar.gz',
                    sha256='79a696070a058c233c72dd6ac697021cc64abd5ed51e59db867d66d196a89381')

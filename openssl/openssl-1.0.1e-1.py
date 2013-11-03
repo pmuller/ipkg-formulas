@@ -1,8 +1,11 @@
-class OpenSSL(Formula):
+from ipkg.build import Formula, File
+from ipkg import platform
+
+
+class openssl(Formula):
 
     name = 'openssl'
     version = '1.0.1e'
-    revision = 1
     homepage = 'http://openssl.org'
     sources = File('http://openssl.org/source/openssl-1.0.1e.tar.gz',
                    sha256='f74f15e8c8ff11aa3d5bb5f276d202ec18d7246e95f961db76054199c69c1ae3')
