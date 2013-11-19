@@ -1,5 +1,5 @@
 from ipkg.build import Formula, File
-from ipkg import platform
+from ipkg.platforms import Platform
 
 
 class openssl(Formula):
@@ -15,7 +15,7 @@ class openssl(Formula):
         environment = self.environment
         command = ['perl', './Configure', '--prefix=%s' % environment.prefix,
                    'zlib-dynamic', 'shared']
-        if platform.NAME == 'osx':
+        if Platform.current().os_name == 'osx':
             command.append('darwin64-x86_64-cc')
         self.run_command(command)
         self.run_make()
